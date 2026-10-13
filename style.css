@@ -1,0 +1,427 @@
+/* ==========================================================================
+   STYLE.CSS — [untitled] Platform Music Interface
+   Designed for the "How to Curate a Classic Playlist" Interaction Lab Project
+   ========================================================================== */
+
+/* 
+   🎨 CLASSMATE CUSTOMIZATION:
+   Want to change colors or spacing? Edit these variables in :root!
+*/
+:root {
+  --bg-app: #ff5e00;             /* orange */
+  --bg-surface: #ff5e00;         /* Elevated dark grey surface */
+  --bg-pill: #ff5e00;            /* Floating action buttons */
+  --border-subtle: #ff5e00;      /* Soft borders */
+  
+  --text-primary: #ffffff;       /* Pure white text */
+  --text-secondary: #000000;     /* Muted metadata grey */
+  --text-muted: #000000;         /* Subtle labels */
+
+  --accent-color: #0019d2;       /* Clean green indicator (like [untitled]) */
+  --accent-glow: rgba(230, 230, 230, 0.25);
+
+  --font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --card-radius: 18px;           /* Smooth rounded corners from [untitled] */
+  --pill-radius: 99px;
+  --transition: all 0.2s ease;
+}
+
+/* ==========================================================================
+   1. GLOBAL RESET
+   ========================================================================== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--bg-app);
+  color: var(--text-primary);
+  line-height: 1.5;
+  padding-bottom: 120px; /* Space for the bottom player drawer */
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ==========================================================================
+   2. APP CONTENT & RECIPE BANNER
+   ========================================================================== */
+.app-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 48px 28px 0;
+}
+
+.recipe-banner {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding: 12px 0 28px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  margin-bottom: 28px;
+}
+
+.recipe-title {
+  font-size: 1.85rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  margin-bottom: 6px;
+  color: var(--accent-color);
+}
+
+.recipe-description {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  max-width: 650px;
+  margin: 0;
+}
+
+.info-link {
+  font-size: 0.85rem;
+  color: var(--text-primary);
+  text-decoration: none;
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  padding: 8px 14px;
+  border-radius: var(--pill-radius);
+  transition: var(--transition);
+}
+
+.info-link:hover {
+  background-color: #2a2a2e;
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+/* ==========================================================================
+   4. 1:1 SQUARE CARD GRID (Matching [untitled])
+   ========================================================================== */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 28px 20px;
+}
+
+.track-card {
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  user-select: none;
+}
+
+.track-card:hover {
+  transform: translateY(-4px);
+}
+
+/* The square 1:1 artwork wrapper */
+.artwork-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: var(--card-radius);
+  overflow: hidden;
+  background-color: var(--bg-surface);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+  margin-bottom: 10px;
+}
+
+/* Mandatory <img> element styling */
+.cover-art {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.track-card:hover .cover-art {
+  transform: scale(1.03);
+}
+
+/* Active card highlight */
+.track-card.active .artwork-wrapper {
+  outline: 2px solid var(--accent-color);
+  outline-offset: 2px;
+  box-shadow: 0 0 20px var(--accent-glow);
+}
+
+/* Top-left step tag on image */
+.step-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: rgba(0, 0, 0, 0.118);
+  backdrop-filter: blur(8px);
+  color: var(--text-primary);
+  font-size: 0.68rem;
+  font-weight: 600;
+  padding: 4px 8px;
+  border-radius: 6px;
+  letter-spacing: 0.3px;
+}
+
+/* Floating round play button from [untitled] */
+.play-pill {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #ffffff52;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.play-icon {
+  font-size: 11px;
+  margin-left: 2px; /* optical center */
+}
+
+.play-pill:hover,
+.track-card.active .play-pill {
+  background-color: #ffffff6f;
+  color: #121212;
+  transform: scale(1.1);
+}
+
+/* Track Metadata below the image */
+.track-meta {
+  padding: 2px 2px 0;
+}
+
+.track-name-row {
+  margin-bottom: 2px;
+}
+
+.track-title {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.track-artist-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.track-artist {
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.more-options {
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  cursor: pointer;
+  padding: 0 4px;
+}
+
+.more-options:hover {
+  color: var(--text-primary);
+}
+
+/* ==========================================================================
+   5. FLOATING PILL BUTTON (Modeled after the [untitled] "+ Add" button)
+   ========================================================================== */
+.floating-action-wrap {
+  position: fixed;
+  bottom: 105px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 90;
+}
+
+.floating-pill-btn {
+  background-color: #e5e5e6;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: var(--text-primary);
+  font-family: var(--font-family);
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: 10px 22px;
+  border-radius: var(--pill-radius);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  transition: var(--transition);
+}
+
+.floating-pill-btn:hover {
+  background-color: #ffffff;
+  transform: translateY(-2px);
+}
+
+.plus-icon {
+  font-size: 1.1rem;
+}
+
+/* ==========================================================================
+   6. INTERACTIVE BOTTOM PLAYER / RECIPE DRAWER
+   ========================================================================== */
+.player-drawer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 90px;
+  background-color: rgba(230, 230, 231, 0.95);
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 28px;
+  z-index: 100;
+}
+
+.player-left {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex: 1 1 280px;
+}
+
+.drawer-thumb {
+  width: 52px;
+  height: 52px;
+  border-radius: 10px;
+  object-fit: cover;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.drawer-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.drawer-step-tag {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--accent-color);
+  letter-spacing: 0.3px;
+}
+
+.drawer-title {
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin: 1px 0;
+}
+
+.drawer-artist {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
+.player-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 2 1 450px;
+}
+
+.player-controls {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 4px;
+}
+
+.control-btn {
+  background: none;
+  border: none;
+  color: var(--text-primary);
+  font-size: 1.1rem;
+  cursor: pointer;
+  padding: 4px;
+  transition: var(--transition);
+}
+
+.control-btn:hover {
+  transform: scale(1.15);
+}
+
+.play-main-btn {
+  background-color: #ffffff;
+  color: #121212;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+}
+
+.play-main-btn:hover {
+  background-color: #f2f2f7;
+  transform: scale(1.1);
+}
+
+.drawer-recipe-note {
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+  text-align: center;
+  max-width: 500px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin: 0;
+}
+
+.player-right {
+  display: flex;
+  justify-content: flex-end;
+  flex: 1 1 200px;
+}
+
+.vibe-tag {
+  font-size: 0.75rem;
+  font-weight: 500;
+  background-color: var(--bg-surface);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: var(--text-primary);
+  padding: 5px 12px;
+  border-radius: var(--pill-radius);
+}
+
+/* ==========================================================================
+   7. RESPONSIVE MEDIA QUERIES
+   ========================================================================== */
+@media (max-width: 768px) {
+  .grid-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px 12px;
+  }
+
+  .player-right {
+    display: none;
+  }
+
+  .drawer-recipe-note {
+    display: none;
+  }
+
+  .player-drawer {
+    padding: 0 16px;
+  }
+}

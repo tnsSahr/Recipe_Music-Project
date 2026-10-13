@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>[recipe] — How to Curate a Classic Playlist</title>
+
+  <!-- Clean, modern sans-serif typography matching [untitled] -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ===================================================================
+       RECIPE CONTENT & ALGORITHM NOTES
+       =================================================================== -->
+
+
+  <!-- ===================================================================
+       2. RECIPE SUB-HEADER (Algorithm formula notes)
+       Mandatory elements used: <section>, <p>, <a>
+       =================================================================== -->
+  <main class="app-content">
+
+    <section class="recipe-banner">
+      <div class="recipe-meta-text">
+        <h1 class="recipe-title">Curating a Classic Playlist</h1>
+        <!-- Mandatory <p> element -->
+        <p class="recipe-description">
+          An algorithm for sequencing 10 experimental tracks. Click any track card to test the sequence, 
+          inspect its curation role, and listen to the transition.
+        </p>
+      </div>
+
+      <!-- Mandatory <a> element -->
+      <a class="info-link" href="https://en.wikipedia.org/wiki/Experimental_music" target="_blank" rel="noopener noreferrer">
+        About the Sonic Heritage &rarr;
+      </a>
+    </section>
+
+
+    <!-- ===================================================================
+       3. TRACK GRID (Matching the [untitled] 1:1 square card layout)
+       Mandatory <img> tags inside each card
+       =================================================================== -->
+    <!-- Mandatory <section> element -->
+    <section class="grid-container" id="tracks-grid">
+
+      <!-- Card 01: Bloc Party -->
+      <article class="track-card active" data-index="0">
+        <div class="artwork-wrapper">
+          <!-- Mandatory <img> element -->
+          <img class="cover-art" src="images/bloc_party.jpg" alt="Bloc Party live on stage">
+          <button class="play-pill" aria-label="Play Track">
+            <span class="play-icon">▶</span>
+          </button>
+          <span class="step-badge">01. Opener</span>
+        </div>
+        <div class="track-meta">
+          <div class="track-name-row">
+            <span class="track-title">Banquet / Helicopter</span>
+          </div>
+          <div class="track-artist-row">
+            <span class="track-artist">Bloc Party</span>
+            <span class="more-options">•••</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 02: Kanye West -->
+      <article class="track-card" data-index="1">
+        <div class="artwork-wrapper">
+          <img class="cover-art" src="images/kanye_tlop.jpg" alt="Kanye West - The Life of Pablo album cover">
+          <button class="play-pill" aria-label="Play Track">
+            <span class="play-icon">▶</span>
+          </button>
+          <span class="step-badge">02. Disruption</span>
+        </div>
+        <div class="track-meta">
+          <div class="track-name-row">
+            <span class="track-title">Feedback</span>
+          </div>
+          <div class="track-artist-row">
+            <span class="track-artist">Kanye West</span>
+            <span class="more-options">•••</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 03: Nine Inch Nails -->
+      <article class="track-card" data-index="2">
+        <div class="artwork-wrapper">
+          <img class="cover-art" src="images/nin.jpg" alt="Nine Inch Nails live stage performance">
+          <button class="play-pill" aria-label="Play Track">
+            <span class="play-icon">▶</span>
+          </button>
+          <span class="step-badge">03. Industrial Grit</span>
+        </div>
+        <div class="track-meta">
+          <div class="track-name-row">
+            <span class="track-title">The Perfect Drug</span>
+          </div>
+          <div class="track-artist-row">
+            <span class="track-artist">Nine Inch Nails</span>
+            <span class="more-options">•••</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 04: Death Drive -->
+      <article class="track-card" data-index="3">
+        <div class="artwork-wrapper">
+          <img class="cover-art" src="images/death_drive.jpg" alt="Death Drive - My Own Hands artwork">
+          <button class="play-pill" aria-label="Play Track">
+            <span class="play-icon">▶</span>
+          </button>
+          <span class="step-badge">04. Overdrive</span>
+        </div>
+        <div class="track-meta">
+          <div class="track-name-row">
+            <span class="track-title">My Own Hands</span>
+          </div>
+          <div class="track-artist-row">
+            <span class="track-artist">Death Drive</span>
+            <span class="more-options">•••</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 05: Yves Tumor -->
+      <article class="track-card" data-index="4">
+        <div class="artwork-wrapper">
+          <img class="cover-art" src="images/yves_tumor.jpg" alt="Yves Tumor avant-garde portrait">
+          <button class="play-pill" aria-label="Play Track">
+            <span class="play-icon">▶</span>
+          </button>
+          <span class="step-badge">05. Avant-Glow</span>
+        </div>
+        <div class="track-meta">
+          <div class="track-name-row">
+            <span class="track-title">Gospel For A New Century</span>
+          </div>
+          <div class="track-artist-row">
+            <span class="track-artist">Yves Tumor</span>
+            <span class="more-options">•••</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 06: ML Buch -->
+      <article class="track-card" data-index="5">
+        <div class="artwork-wrapper">
+          <img class="cover-art" src="images/ml_buch.jpg" alt="ML Buch - Suntub aesthetic digital guitar">
+          <button class="play-pill" aria-label="Play Track">
+            <span class="play-icon">▶</span>
+          </button>
+          <span class="step-badge">06. Detuned Sky</span>
+        </div>
+        <div class="track-meta">
+          <div class="track-name-row">
+            <span class="track-title">Fleshless Hand</span>
+          </div>
+          <div class="track-artist-row">
+            <span class="track-artist">ML Buch</span>
+            <span class="more-options">•••</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 07: Solange (True) -->
+      <article class="track-card" data-index="6">
+        <div class="artwork-wrapper">
+          <img class="cover-art" src="images/solange_true.gif" alt="Solange - True EP cover">
+          <button class="play-pill" aria-label="Play Track">
+            <span class="play-icon">▶</span>
+          </button>
+          <span class="step-badge">07. R&amp;B Respite</span>
+        </div>
+        <div class="track-meta">
+          <div class="track-name-row">
+            <span class="track-title">Losing You</span>
+          </div>
+          <div class="track-artist-row">
+            <span class="track-artist">Solange (True)</span>
+            <span class="more-options">•••</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 08: Blood Orange -->
+      <article class="track-card" data-index="7">
+        <div class="artwork-wrapper">
+          <img class="cover-art" src="images/blood_orange.jpeg" alt="Blood Orange / Dev Hynes portrait">
+          <button class="play-pill" aria-label="Play Track">
+            <span class="play-icon">▶</span>
+          </button>
+          <span class="step-badge">08. Silky Bridge</span>
+        </div>
+        <div class="track-meta">
+          <div class="track-name-row">
+            <span class="track-title">Charcoal Baby</span>
+          </div>
+          <div class="track-artist-row">
+            <span class="track-artist">Blood Orange</span>
+            <span class="more-options">•••</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 09: Kid Cudi -->
+      <article class="track-card" data-index="8">
+        <div class="artwork-wrapper">
+          <img class="cover-art" src="images/kid_cudi.jpg" alt="Kid Cudi portrait">
+          <button class="play-pill" aria-label="Play Track">
+            <span class="play-icon">▶</span>
+          </button>
+          <span class="step-badge">09. Low-End Hum</span>
+        </div>
+        <div class="track-meta">
+          <div class="track-name-row">
+            <span class="track-title">Frequency</span>
+          </div>
+          <div class="track-artist-row">
+            <span class="track-artist">Kid Cudi</span>
+            <span class="more-options">•••</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 10: Rihanna (Anti) -->
+      <article class="track-card" data-index="9">
+        <div class="artwork-wrapper">
+          <img class="cover-art" src="images/rihanna_anti.png" alt="Rihanna - Anti official album artwork">
+          <button class="play-pill" aria-label="Play Track">
+            <span class="play-icon">▶</span>
+          </button>
+          <span class="step-badge">10. Nocturnal Swagger</span>
+        </div>
+        <div class="track-meta">
+          <div class="track-name-row">
+            <span class="track-title">Desperado</span>
+          </div>
+          <div class="track-artist-row">
+            <span class="track-artist">Rihanna (Anti)</span>
+            <span class="more-options">•••</span>
+          </div>
+        </div>
+      </article>
+
+    </section>
+
+  </main>
+
+
+  <!-- ===================================================================
+       4. FLOATING "+ Recipe Step" BUTTON (From [untitled] "+ Add" button)
+       =================================================================== -->
+  <div class="floating-action-wrap">
+    <button id="floating-step-btn" class="floating-pill-btn">
+      <span class="plus-icon">+</span> Play Recipe Sequence
+    </button>
+  </div>
+
+
+  <!-- ===================================================================
+       5. INTERACTIVE RECIPE PLAYER DRAWER (Bottom Bar)
+       Updates automatically whenever a card or play button is clicked!
+       =================================================================== -->
+  <aside class="player-drawer" id="player-drawer">
+    <div class="player-left">
+      <img id="drawer-cover" class="drawer-thumb" src="images/bloc_party.jpg" alt="Now playing cover">
+      <div class="drawer-info">
+        <span class="drawer-step-tag" id="drawer-step-tag">Step 01 / 10 • The Opener</span>
+        <h4 class="drawer-title" id="drawer-title">Banquet / Helicopter</h4>
+        <span class="drawer-artist" id="drawer-artist">Bloc Party</span>
+      </div>
+    </div>
+
+    <div class="player-center">
+      <div class="player-controls">
+        <button id="btn-prev" class="control-btn" aria-label="Previous Track">⏮</button>
+        <button id="btn-toggle-play" class="control-btn play-main-btn" aria-label="Toggle Play">▶</button>
+        <button id="btn-next" class="control-btn" aria-label="Next Track">⏭</button>
+      </div>
+      <!-- Recipe algorithm rationale -->
+      <p class="drawer-recipe-note" id="drawer-recipe-note">
+        <strong>Recipe Step 01:</strong> Establish urgency and hook the listener with high-tempo post-punk drums.
+      </p>
+    </div>
+
+    <div class="player-right">
+      <span class="vibe-tag" id="drawer-vibe-tag">⚡ Post-Punk Kinetic</span>
+    </div>
+  </aside>
+
+  <!-- Script -->
+  <script src="script.js"></script>
+</body>
+</html>
