@@ -40,7 +40,7 @@ body {
   background-color: var(--bg-app);
   color: var(--text-primary);
   line-height: 1.5;
-  padding-bottom: 120px; /* Space for the bottom player drawer */
+  padding-bottom: 140px; /* Space for the bottom player drawer */
   -webkit-font-smoothing: antialiased;
 }
 
@@ -266,7 +266,7 @@ body {
 }
 
 .floating-pill-btn:hover {
-  background-color: #ffffff;
+  background-color: #010bc7;
   transform: translateY(-2px);
 }
 
@@ -282,7 +282,7 @@ body {
   bottom: 0;
   left: 0;
   right: 0;
-  height: 90px;
+  min-height: 96px;
   background-color: rgba(230, 230, 231, 0.95);
   backdrop-filter: blur(25px);
   -webkit-backdrop-filter: blur(25px);
@@ -290,7 +290,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 28px;
+  padding: 12px 28px;
   z-index: 100;
 }
 
@@ -325,6 +325,7 @@ body {
   font-size: 0.95rem;
   font-weight: 600;
   margin: 1px 0;
+  color: var(--accent-color);
 }
 
 .drawer-artist {
@@ -378,14 +379,14 @@ body {
 }
 
 .drawer-recipe-note {
-  font-size: 0.78rem;
+  font-size: 0.8rem;
+  line-height: 1.35;
   color: var(--text-secondary);
   text-align: center;
-  max-width: 500px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  margin: 0;
+  max-width: 620px;
+  white-space: normal;
+  word-wrap: break-word;
+  margin: 4px 0 0 0;
 }
 
 .player-right {
