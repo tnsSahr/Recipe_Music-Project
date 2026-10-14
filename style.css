@@ -9,9 +9,9 @@
 */
 :root {
   --bg-app: #ff5e00;             /* orange */
-  --bg-surface: #ff5e00;         /* Elevated dark grey surface */
-  --bg-pill: #ff5e00;            /* Floating action buttons */
-  --border-subtle: #ff5e00;      /* Soft borders */
+  --bg-surface: #0e04d2;         /* Elevated dark grey surface */
+  --bg-pill: #0019d2;            /* Floating action buttons */
+  --border-subtle: #2200e4;      /* Soft borders */
   
   --text-primary: #ffffff;       /* Pure white text */
   --text-secondary: #000000;     /* Muted metadata grey */
@@ -249,7 +249,7 @@ body {
 }
 
 .floating-pill-btn {
-  background-color: #e5e5e6;
+  background-color: #5e5e5e67;
   border: 1px solid rgba(255, 255, 255, 0.15);
   color: var(--text-primary);
   font-family: var(--font-family);
@@ -283,7 +283,7 @@ body {
   left: 0;
   right: 0;
   min-height: 96px;
-  background-color: rgba(230, 230, 231, 0.95);
+  background-color: rgba(230, 230, 231, 0.132);
   backdrop-filter: blur(25px);
   -webkit-backdrop-filter: blur(25px);
   border-top: 1px solid rgba(255, 255, 255, 0.08);
